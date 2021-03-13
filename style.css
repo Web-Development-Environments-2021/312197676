@@ -5,3 +5,15 @@
 	height: 35px;
 	background: white;
 }
+
+#align_li li{
+    display: inline-block;
+}
+
+#align_li li::after{
+	content:"|";
+}
+#align_li li:last-child::after{
+	content:"";
+}
+
