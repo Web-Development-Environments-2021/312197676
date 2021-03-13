@@ -82,3 +82,10 @@
 	clear: both;
 	display: table;
 }
+
+.pictureTableLike{
+	float: left;
+	width: 30.00%;
+	padding: 5px;
+}
+
