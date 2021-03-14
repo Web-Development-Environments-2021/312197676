@@ -86,7 +86,7 @@
 
     <section id="spa" class="section">
       <div class="sectionHeader">
-        ans
+        Q&A
       </div>
     </section>
 
@@ -94,23 +94,87 @@
       <div class="sectionHeader">
         Contact me
       </div>
+      <div style="text-align: center">
+        <form name="emailSending" action="#" onsubmit="return sendMail(this);">
+          
+            <p>
+              <strong>Name: </strong>
+              <input name = "name" TYPE = "text" size = "39">
+            </p>
+            <p>
+              <strong>Subject:</strong> 
+              <input NAME = "subject" TYPE = "text" SIZE = "37">
+            </p>    
+            <p>
+              <strong>Comments:</strong> 
+              <textarea NAME = "comments" ROWS = "6" COLS = "36"></textarea>
+            </p>
+            
+          
+            
+            <!-- <INPUT TYPE="radio"> creates a radio button. The     -->
+            <!-- difference between radio buttons and checkboxes is   -->
+            <!-- that only one radio button in a group can be selected -->
+            <P><STRONG>How you felling?:</STRONG><BR>
+            None
+            <INPUT NAME = "emoji" TYPE = "radio"
+              VALUE = "" CHECKED>
+            &#128512  
+            <INPUT NAME = "emoji" TYPE = "radio" 
+              VALUE = "&#128512">
+            &#128521 
+            <INPUT NAME = "emoji" TYPE = "radio" 
+              VALUE = "&#128521">
+            &#128529
+            <INPUT NAME = "emoji" TYPE = "radio" 
+              VALUE = "&#128529">
+            &#128534 
+            <INPUT NAME = "emoji" TYPE = "radio" 
+              VALUE = "&#128534">
+
+            </P>
+            
+            
+            <INPUT TYPE = "submit" VALUE = "Submit Your Entries"> 
+            <INPUT TYPE = "reset" VALUE = "Clear Your Entries">
+        </form>
+      </div>
     </section>
   </div>
 </div>
 
-<script type="text/javascript">
-$(function(){
-  $("#nav a").click(function(e){
-    e.preventDefault();
-    $('html,body').scrollTo(this.hash,this.hash); 
-  });
-});
+
+<script>
+  function checkValidtion(subject, message, name){
+    if(subject == "") return false;
+    if(message == "") return false;
+    if(name == "") return false;
+    return true;
+  }
 </script>
-<script type="text/javascript">
- $(document).scroll(function() {
-    $('#menu').toggle($(this).scrollTop()>1000)
- });​
- </script>
+
+<script>
+  function sendMail(form){
+    let name = form.name.value;
+    let comment = form.comments.value;
+    let subject = form.subject.value;
+    let valid = checkValidtion(subject, comment, name);
+    let emoji = form.emoji.value;
+    if(!valid){
+      alert("You have to fill all the fields.");
+      return null
+    }
+    let message = "Hi, my name is " + name + " " + emoji + ".%0d%0a" + comment;
+    mailto_link = "mailto:tzahy4530@gmail.com?subject=" + subject + " &body=" + message;
+    let link = document.createElement('a');
+    link.href = mailto_link;
+    link.click();
+    alert("Thanks for the feedback.");
+    return null
+  }
+</script>
+
+
 
 
 </body>
