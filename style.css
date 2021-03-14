@@ -28,6 +28,8 @@
 	font-size: large;
     display: inline-block;
 	color: black;
+	align-items: center;
+	text-align: center;
 }
 
 .align_li li::after{
@@ -47,8 +49,6 @@
 	color: black;
 }
 
-.section{
-}
 
 .sectionHeader{
 	font-weight: bolder;
@@ -93,5 +93,4 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 	align-items: center;
-
 }
