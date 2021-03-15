@@ -10,3 +10,8 @@ The site contain:
 	-BarCode that lead to my github project.
 	-Question of the exercise and their answers.
 	-Option to sending mail to me.
+
+github.io site:
+	https://tzahy4530.github.io/
+
+Having Fun watching my site.
